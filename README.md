@@ -1,8 +1,8 @@
-# DSH-Transparent-UI-Plugin From：@deepseek-ai/dsh-client-ui-aqua
+# DSH-Transparent-UI-Plugin
 
 English | [中文](README.zh.md)
 
-Aqua is a highly customizable glassmorphism theme for the DeepSeek Harness web UI. The header, sidebar, composer, stats line, and trajectory view all become panes of frosted glass. Switch it off and the stock UI comes back exactly, with no source changes to DSH itself.
+DSH-Transparent-UI-Plugin is a highly customizable glassmorphism theme for the DeepSeek Harness web UI. The header, sidebar, composer, stats line, and trajectory view all become panes of frosted glass. Switch it off and the stock UI comes back exactly, with no source changes to DSH itself.
 
 ![](assets/1.png)
 
