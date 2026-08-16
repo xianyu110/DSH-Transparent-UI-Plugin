@@ -1,4 +1,4 @@
-# @deepseek-ai/dsh-client-ui-aqua
+# DSH-Transparent-UI-Plugin From：@deepseek-ai/dsh-client-ui-aqua
 
 English | [中文](README.zh.md)
 
