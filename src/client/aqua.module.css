@@ -636,13 +636,6 @@
   mask-image: linear-gradient(0deg, black 0%, transparent 100%);
 }
 
-/* ---------- Wordmark badge swap: the decorator stamps the plate rect and
-   the knocked-out HARNESS letterforms with data-dsh-aqua-badge-hidden and
-   overlays the official "Harness" pill; these rules do the hiding. ---------- */
-[data-dsh-aqua] [data-dsh-aqua-badge-hidden] {
-  display: none;
-}
-
 /* ---------- Keyboard focus and text selection (both schemes). ---------- */
 [data-dsh-aqua] :focus-visible {
   outline: 2px solid rgba(110, 155, 232, 0.85);

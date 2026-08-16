@@ -19,7 +19,6 @@ import { attachFluidShader, SITE_FLUID_PARAMS, type FluidParams, type FluidShade
 import { attachFluidInteractions } from './fluid-interactions.ts'
 import { startSeamStamper } from './seam-stamper.ts'
 import { mountWhale, type WhaleHandle } from './whale.ts'
-import { startWordmarkBadge, type BadgeHandle } from './wordmark-badge.ts'
 
 /** html attribute selecting the Aqua layer: CSS hooks and ambient effects. */
 export const AQUA_ATTRIBUTE = 'data-dsh-aqua'
@@ -411,7 +410,6 @@ export class AquaLayer {
   private themeListener: (() => void) | undefined
   private seamDisposer: (() => void) | undefined
   private whaleHandle: WhaleHandle | undefined
-  private badgeHandle: BadgeHandle | undefined
   private readonly ctx: Context
 
   /**
@@ -438,7 +436,6 @@ export class AquaLayer {
       this.themeListener = this.ctx.on('theme/change', () => {
         this.dark = this.resolveScheme()
         this.whaleHandle?.setDark(this.dark)
-        this.badgeHandle?.setDark(this.dark)
         if (this.enabled) {
           this.applySettings()
           this.applyFluidPalettes()
@@ -653,7 +650,6 @@ export class AquaLayer {
     this.mountFluid()
     this.startSeamStamper()
     this.syncWhale()
-    if (this.badgeHandle === undefined) this.badgeHandle = startWordmarkBadge(this.dark)
   }
 
   /** Mount or drop the particle whale to match enabled + the whale flag. */
@@ -675,8 +671,6 @@ export class AquaLayer {
     document.documentElement.removeAttribute('data-dsh-compat')
     this.whaleHandle?.dispose()
     this.whaleHandle = undefined
-    this.badgeHandle?.dispose()
-    this.badgeHandle = undefined
     this.tokenDisposer?.()
     this.tokenDisposer = undefined
     this.teardownFluid()
